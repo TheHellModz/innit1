@@ -1,0 +1,507 @@
+--hellz universal v3
+
+--startup
+local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/J5qSawh3')))()
+local Window = OrionLib:MakeWindow({Name = "👑 HellModz - Hellz Universal V3 👑", LoadingTitle = "hellz" ,HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+OrionLib:MakeNotification({
+	Name = "Welcome!",
+	Content = "Welcome to hellz Universal V3",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+-- tabs
+local MainTab = Window:MakeTab({
+	Name = "🟢Main Tab🟢",
+	Icon = "🟢",
+	PremiumOnly = false
+})
+
+local PlayerTab = Window:MakeTab({
+	Name = "🤑Player Tab🤑",
+	Icon = "🤑",
+	PremiumOnly = false
+})
+
+local VisualsTab = Window:MakeTab({
+	Name = "🦴Visuals Tab🦴",
+	Icon = "🦴",
+	PremiumOnly = false
+})
+
+
+local BedWarsTab = Window:MakeTab({
+	Name = "🛏️BedWars Tab🛏️",
+	Icon = "🛏️",
+	PremiumOnly = false
+})
+local PrisonLifeTab = Window:MakeTab({
+	Name = "🔒Prison Life Tab🔒",
+	Icon = "🔒",
+	PremiumOnly = false
+})
+
+local ScriptTab = Window:MakeTab({
+	Name = "📖Script Hub📖",
+	Icon = "📖",
+	PremiumOnly = false
+})
+
+local CreditsTab = Window:MakeTab({
+	Name = "🧾Credits Tab🧾",
+	Icon = "🧾",
+	PremiumOnly = false
+})
+
+--maintab
+MainTab:AddButton({
+	Name = "Btools!",
+	Callback = function()
+        Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = "Hammer"
+  	end    
+})
+MainTab:AddButton({
+	Name = "Infinite Yield Admin!",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "CMD - X Admin!",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Nameless Admin!",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+  	end    
+})
+MainTab:AddButton({
+	Name = "Dark Dex!",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Remote Spy!",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Swimming Player",
+	Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/9CK0qSgn"))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "High FOV",
+	Callback = function()
+        local FOV = 120
+game.Workspace.Camera.FieldOfView = FOV
+  	end    
+})
+MainTab:AddButton({
+	Name = "Low FOV",
+	Callback = function()
+        local FOV = 25
+game.Workspace.Camera.FieldOfView = FOV
+  	end    
+})
+MainTab:AddButton({
+	Name = "Normal FOV",
+	Callback = function()
+        local FOV = 75
+game.Workspace.Camera.FieldOfView = FOV
+  	end    
+})
+MainTab:AddButton({
+	Name = "Delete GUI",
+	Callback = function()
+        OrionLib:Destroy()
+  	end    
+})
+MainTab:AddButton({
+	Name = "E To Fly",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHellModz/fly/7ff0e4b551acbf0a85dbee7e8693913786263db1/README.md"))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Noclip",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/pKV2Ys4E", true))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Click TP",
+	Callback = function()
+		mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+})
+MainTab:AddButton({
+	Name = "(zzerexx) Custom CrossHair",
+	Callback = function()
+getgenv().CrosshairSettings = {
+    Color = Color3.fromRGB(255,0,0),
+    RainbowColor = true,
+    Opacity = 1,
+    Length = 10, -- Length of each line
+    Thickness = 2, -- Thickness of each line
+    Offset = 3, -- Offset from the middle point
+    Dot = false, -- not recommended
+    FollowCursor = true, -- Crosshair follows the cursor
+    HideMouseIcon = true, -- Hides the mouse icon, set to 0 to ignore
+    HideGameCrosshair = true, -- Hides the current game's crosshair (if its supported)
+    ToggleKey = Enum.KeyCode.RightAlt, -- Toggles crosshair visibility
+} -- v1.2.1
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zzerexx/scripts/main/CustomCrosshair.lua", true))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Normal CrossHair",
+	Callback = function()
+getgenv().CrosshairSettings = {
+	Enabled = false,
+    Color = Color3.fromRGB(255,0,0),
+    RainbowColor = false,
+    Opacity = 0,
+    Length = 0,
+    Thickness = 0, 
+    Offset = 0, 
+    Dot = false, 
+    FollowCursor = false, 
+    HideMouseIcon = false, 
+    HideGameCrosshair = false, 
+    ToggleKey = Enum.KeyCode.RightAlt, 
+} -- v1.2.1
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zzerexx/scripts/main/CustomCrosshair.lua", true))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "(BUGGY)ChatHax",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHellModz/chatscript/main/chathax", true))()
+  	end    
+})
+MainTab:AddButton({
+	Name = "Chat Bypasser",
+	Callback = function()
+		loadstring(game:HttpGet("https://vadrifts.dev/source.lua"))()
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Hit-Box Expander (Vcsk)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
+
+  	end    
+})
+
+
+--playertab
+
+PlayerTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 600,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "walkspeed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "JumpForce",
+	Min = 50,
+	Max = 600,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "jumppower",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+PlayerTab:AddButton({
+	Name = "Infinite Jump",
+	Callback = function()
+        local InfiniteJumpEnabled = true
+      game:GetService("UserInputService").JumpRequest:connect(function()
+         if InfiniteJumpEnabled then
+            game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+         end
+      end)
+  	end    
+})
+PlayerTab:AddButton({
+	Name = "Double Jump",
+	Callback = function()
+        local Character = game.Players.LocalPlayer.Character
+local Torso = Character:WaitForChild("Torso") 
+local Humanoid = Character:WaitForChild("Humanoid") 
+
+function onJump()
+ Humanoid.Jump = true 
+ wait(0.1) 
+ Humanoid.Jump = false 
+ Torso.Velocity = Vector3.new(0,60,0)
+end 
+
+local connection; 
+connection = Humanoid.Jumping:Connect(onJump) 
+  	end    
+})
+
+
+--visualtab
+
+VisualsTab:AddButton({
+	Name = "Body Highlight ESP",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHellModz/boxesp/main/README.md"))()
+  	end    
+})
+VisualsTab:AddButton({
+	Name = "No Body Highlight ESP",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHellModz/disablebox/main/README.md"))()
+  	end    
+})
+VisualsTab:AddButton({
+	Name = "Box ESP (CANT DISABLE) ",
+	Callback = function()
+		-- settings
+local settings = {
+	defaultcolor = Color3.fromRGB(255,0,0),
+	teamcheck = false,
+	teamcolor = true
+ };
+ 
+ -- services
+ local runService = game:GetService("RunService");
+ local players = game:GetService("Players");
+ 
+ -- variables
+ local localPlayer = players.LocalPlayer;
+ local camera = workspace.CurrentCamera;
+ 
+ -- functions
+ local newVector2, newColor3, newDrawing = Vector2.new, Color3.new, Drawing.new;
+ local tan, rad = math.tan, math.rad;
+ local round = function(...) local a = {}; for i,v in next, table.pack(...) do a[i] = math.round(v); end return unpack(a); end;
+ local wtvp = function(...) local a, b = camera.WorldToViewportPoint(camera, ...) return newVector2(a.X, a.Y), b, a.Z end;
+ 
+ local espCache = {};
+ local function createEsp(player)
+	local drawings = {};
+	
+	drawings.box = newDrawing("Square");
+	drawings.box.Thickness = 1;
+	drawings.box.Filled = false;
+	drawings.box.Color = settings.defaultcolor;
+	drawings.box.Visible = false;
+	drawings.box.ZIndex = 2;
+ 
+	drawings.boxoutline = newDrawing("Square");
+	drawings.boxoutline.Thickness = 3;
+	drawings.boxoutline.Filled = false;
+	drawings.boxoutline.Color = newColor3();
+	drawings.boxoutline.Visible = false;
+	drawings.boxoutline.ZIndex = 1;
+ 
+	espCache[player] = drawings;
+ end
+ 
+ local function removeEsp(player)
+	if rawget(espCache, player) then
+		for _, drawing in next, espCache[player] do
+			drawing:Remove();
+		end
+		espCache[player] = nil;
+	end
+ end
+ 
+ local function updateEsp(player, esp)
+	local character = player and player.Character;
+	if character then
+		local cframe = character:GetModelCFrame();
+		local position, visible, depth = wtvp(cframe.Position);
+		esp.box.Visible = visible;
+		esp.boxoutline.Visible = visible;
+ 
+		if cframe and visible then
+			local scaleFactor = 1 / (depth * tan(rad(camera.FieldOfView / 2)) * 2) * 1000;
+			local width, height = round(4 * scaleFactor, 5 * scaleFactor);
+			local x, y = round(position.X, position.Y);
+ 
+			esp.box.Size = newVector2(width, height);
+			esp.box.Position = newVector2(round(x - width / 2, y - height / 2));
+			esp.box.Color = settings.teamcolor and player.TeamColor.Color or settings.defaultcolor;
+ 
+			esp.boxoutline.Size = esp.box.Size;
+			esp.boxoutline.Position = esp.box.Position;
+		end
+	else
+		esp.box.Visible = false;
+		esp.boxoutline.Visible = false;
+	end
+ end
+ 
+ -- main
+ for _, player in next, players:GetPlayers() do
+	if player ~= localPlayer then
+		createEsp(player);
+	end
+ end
+ 
+ players.PlayerAdded:Connect(function(player)
+	createEsp(player);
+ end);
+ 
+ players.PlayerRemoving:Connect(function(player)
+	removeEsp(player);
+ end)
+ 
+ runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
+	for player, drawings in next, espCache do
+		if settings.teamcheck and player.Team == localPlayer.Team then
+			continue;
+		end
+ 
+		if drawings and player ~= localPlayer then
+			updateEsp(player, drawings);
+		end
+	end
+ end)
+  	end    
+})
+
+
+
+
+
+--bedwarstab
+
+BedWarsTab:AddButton({
+	Name = "Bedwars Script (Vape)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+
+  	end    
+})
+
+--prison life tab
+
+PrisonLifeTab:AddButton({
+	Name = "Remove Doors",
+	Callback = function()
+		game.Workspace.Doors:Destroy()
+  	end    
+})
+PrisonLifeTab:AddButton({
+	Name = "Remove Walls",
+	Callback = function()
+		game.Workspace.Walls:Destroy()
+  	end    
+})
+PrisonLifeTab:AddButton({
+	Name = "Remove Towers",
+	Callback = function()
+		game.Workspace.Towers:Destroy()
+  	end    
+})
+PrisonLifeTab:AddButton({
+	Name = "Prisonware Script",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))();
+  	end    
+})
+
+--Scripttab
+
+local FeSection = ScriptTab:AddSection({
+	Name = "Main Fe"
+})
+local GuiSection = ScriptTab:AddSection({
+	Name = "Guis"
+})
+FeSection:AddButton({
+	Name = "Fe Universal!",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
+
+  	end    
+})
+FeSection:AddButton({
+	Name = "Fe Invisible!",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Invisible%20Gui'))()
+
+  	end    
+})
+FeSection:AddButton({
+	Name = "Fe HatHub!",
+	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/6tshcUd2'))()
+
+  	end    
+})
+FeSection:AddButton({
+	Name = "Fe Syntax!",
+	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/6tshcUd2'))()
+
+  	end    
+})
+FeSection:AddButton({
+	Name = "FE Gun [NEED ACCESORY]",
+	Callback = function()
+        _G.netlessmult = 1
+_G.safenetless = false
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/plusgiant5/Libraries/main/Plusgiant5ReanimationV2.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/plusgiant5/Libraries/main/Plusgiant5ReanimationV2/gun.lua"))()
+  	end    
+})
+GuiSection:AddButton({
+	Name = "CoolKid Gui",
+	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/mhhMT0Em'))()
+  	end    
+})
+GuiSection:AddButton({
+	Name = "1x1x1x1 Gui",
+	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/CYye6uA4'))()
+  	end    
+})
+GuiSection:AddButton({
+	Name = "Ultimate Trolling Gui",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukez/Scripts/main/UTG%20V3%20RAW"))()
+  	end    
+})
+
+--creditstab
+CreditsTab:AddLabel("Made by hellmodz")
+CreditsTab:AddLabel("I Used Orion Lib And Customised It")
+CreditsTab:AddLabel("Dont blame me if you get banned")
+CreditsTab:AddLabel("Lastely, Have fun :)")
